@@ -1,0 +1,49 @@
+import java.util.*;
+class Employee
+{
+	int emp_num;
+	String emp_name;
+	double basicsal;
+	double DA,IT,netsal;
+	void input()
+	{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the Employee number and name");
+	emp_num=sc.nextInt();
+	emp_name=sc.next();
+	System.out.println("Enter the basic salary ");
+	basicsal=sc.nextDouble();
+	}
+	void net()
+	{
+	DA=0.75*basicsal;
+	IT=0.3*basicsal;
+	netsal=basicsal+DA-IT;
+	}
+	void display()
+	{
+	System.out.println("Name of the employee ="+emp_name);
+	System.out.println("Employee number ="+emp_num);
+	System.out.println("Basicsalary is ="+basicsal);
+	System.out.println("Net salary ="+netsal);
+	}
+}
+class Emp
+{
+	public static void main(String args[])
+	{
+	Scanner sc=new Scanner(System.in);
+	Employee emp=new Employee();
+	int i;
+	System.out.println("Enter the number of employees");
+	int n=sc.nextInt();
+	for(i=0;i<n;i++)
+	{
+	emp.input();
+	emp.net();
+	emp.display();
+	}
+	}
+}
+	
+	
