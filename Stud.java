@@ -3,7 +3,8 @@ class Student
 {
 	String USN;
 	String name;
-	int i,j,n,total;
+	int i,j,n;
+        int total=0;
 	float sgpa;
 	int k=0;
 	int credit[];
