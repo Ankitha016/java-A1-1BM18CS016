@@ -47,5 +47,20 @@ class Book
 	}
 }
 }
+output:
+Enter the number of books
+2  
+Enter the title,author,pages,price
+xxx
+yyy
+180
+90
+title=xxx,author=yyy,pages=180,price=90.0
+Enter the title,author,pages,price
+ttt
+sss
+280
+100
+title=ttt,author=sss,pages=280,price=100.0
 
 	
