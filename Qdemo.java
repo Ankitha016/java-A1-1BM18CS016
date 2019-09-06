@@ -68,3 +68,12 @@ class Qdemo
 	ob.display();
 	}
 }
+contents of queue are :
+
+1
+2
+deleted ele =1
+deleted ele =2
+queue is empty
+
+
