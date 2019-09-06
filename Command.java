@@ -17,6 +17,10 @@ class Command
 		System.out.println("largest number is="+large);
 	}
 }
+23
+45
+67
+largest number is=67
 			
 		
 	
