@@ -1,72 +1,57 @@
 import java.util.*;
-class Account
+abstract class Base
 {
-	Scanner sc=new Scanner(System.in);
-	String name;
-	int num;
-	float balance;
-	void input()
+	protected int l,b;
+	protected double area;
+	void getdata()
 	{
-		System.out.println("Enter the name");
-		name=sc.next();
-		System.out .println("Enter the customer number");
-		num=sc.nextInt();
-		System.out .println("Enter the balance");
-		balance=sc.nextFloat();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the 2 sides");
+		l=sc.nextInt();
+		b=sc.nextInt();
 	}
 	void display()
 	{
-		System.out.println("name="+name);
-		System.out.println("Customer number="+num);
-		System.out.println("Balance="+balance);
+		System.out.println("Area="+area);
+	}
+	abstract double compute();
+}
+class Triangle extends Base
+{
+	double compute()
+	{
+		area=0.5*l*b;
+		return area;
 	}
 }
-class Savings extends Account
+class Rectangle extends Base
 {
-	Scanner sc=new Scanner(System.in);
-	float interest,time;
-	void input1()
+	double compute()
 	{
-		input();
-		System.out.println("Enter the interest and time=");
-		float interest=sc.nextFloat();
-		float time=sc.nextFloat();
-	}
-	void display1()
-	{
-		display();
-		System.out.println("Rate="+interest);
-		System.out.println("time="+time);
-	}
-	float compute()
-	{
-		return balance*time*interest;
+		area=l*b;
+		return area;
 	}
 }
 class Demo
 {
 	public static void main(String args[])
 	{
-		float i;
-		Savings s=new Savings();
-		s.input1();
-		i=s.compute();
-		System.out.println(i);
-		s.display1();
+		Scanner sc=new Scanner(System.in);
+		int choice;
+		Base ref;
+		System.out.println("Enter 1 for Triangle and 2 for rectangke");
+		choice=sc.nextInt();
+		if(choice==1)
+		{
+			ref=new Triangle();
+		}
+		else 
+			ref=new Rectangle();
+		ref.getdata();
+		ref.compute();
+		ref.display();
 	}
 }
 		
-		
+	
 
-
-
-
-
-
-
-
-
-
-
-		
-		
