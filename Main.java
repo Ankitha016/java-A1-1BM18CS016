@@ -1,55 +1,59 @@
-import java.util.*;
-class Patients
+class T1 implements Runnable
 {
-	String id,name,doc;
-	void input()
+	Thread t;
+	T1()
 	{
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the id, name and doctor");
-		id=sc.next();
-		name=sc.next();
-		doc=sc.next();
+		t=new Thread(this,"T1");
+		t.start();
 	}
-	void display()
+	public void run()
 	{
-		System.out.println("name="+name);
-		System.out.println("id="+id);
-		System.out.println("doctor="+doc);
-		
+		while(true)
+		{
+			System.out.println("BMSCE");
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException e)
+			{
+				System.out.println("interrupted");
+			}
+		}
+	}
+}
+class T2 implements Runnable
+{
+	Thread t;
+	T2()
+	{
+		t=new Thread(this,"T2");
+		t.start();
+	}
+	public void run()
+	{
+		while(true)
+		{
+			System.out.println("CSE");
+			try
+			{
+				Thread.sleep(2000);
+			}
+			catch(InterruptedException e)
+			{
+				System.out.println("interrupted");
+			}
+		}
 	}
 }
 class Main
 {
 	public static void main(String args[])
 	{
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the number of patients");
-		int n=sc.nextInt();
-		Patients ob[]=new Patients[n];
-		int i,j;
-		for(i=0;i<n;i++)
-		{
-			ob[i]=new Patients();
-			ob[i].input();
-			ob[i].display();
-		}
-		System.out.println("Enter the doctors name ");
-		String doctor=sc.next();
-		for(j=0;j<n;j++)
-		{
-			System.out.println("The patients are");
-			if(doctor.equals(ob[j].doc))
-			{
-				System.out.println(ob[j].name);	
-			}
-
-		}
+		new T1();
+		new T2();
 	}
 }
-		
-			
-		
 
 		
-		
-	
+
