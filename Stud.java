@@ -1,3 +1,4 @@
+
 import java.util.*;
 class Student
 {
@@ -11,24 +12,24 @@ class Student
 	int marks[];
 	void set()
 	{
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter name and usn");
-	USN=sc.next();
-	name=sc.next();
-	System.out.println("Enter the number of subjects");
-	 n=sc.nextInt();
-	 credit=new int[n];
-	System.out.println("enter the credits in all the subjects");
-	for(i=0;i<n;i++)
-	{
-		credit[i]=sc.nextInt();
-	}
-	 marks=new int[n];
-	System.out.println("enter the marks in all the subjects");
-	for(i=0;i<n;i++)
-	{
-		marks[i]=sc.nextInt();
-	}
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter name and usn");
+		USN=sc.next();
+		name=sc.next();
+		System.out.println("Enter the number of subjects");
+		 n=sc.nextInt();
+		 credit=new int[n];
+		System.out.println("enter the credits in all the subjects");
+		for(i=0;i<n;i++)
+		{
+			credit[i]=sc.nextInt();
+		}
+		 marks=new int[n];
+		System.out.println("enter the marks in all the subjects");
+		for(i=0;i<n;i++)
+		{
+			marks[i]=sc.nextInt();
+		}
 	}
 	void compute()
 	{
